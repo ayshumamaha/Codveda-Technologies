@@ -1,0 +1,41 @@
+users = {}
+
+while True:
+
+    print("\nAuthentication System")
+    print("1. Register")
+    print("2. Login")
+    print("3. Exit")
+
+    choice = input("Enter Choice: ")
+
+    if choice == "1":
+
+        username = input("Enter Username: ")
+        password = input("Enter Password: ")
+
+        if username in users:
+            print("User already exists")
+        else:
+            users[username] = password
+            print("Registration Successful")
+
+    elif choice == "2":
+
+        username = input("Enter Username: ")
+        password = input("Enter Password: ")
+
+        if username in users and users[username] == password:
+            print("Login Successful")
+            print("Welcome", username)
+        else:
+            print("Invalid Credentials")
+
+    elif choice == "3":
+        print("Application Closed")
+        break
+
+    else:
+        print("Invalid Choice")
+
+
